@@ -24,15 +24,13 @@ export default function Recipes() {
   }, [])
 
   return (
-    <div style={{ padding: 'var(--sp-lg) 0' }}>
+    <div className={styles.page}>
       <div className="container">
-        <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'var(--text-display)', fontWeight: 400, marginBottom: 'var(--sp-sm)' }}>
-          Recetas
-        </h1>
-        <p style={{ fontSize: 'var(--text-body-lg)', color: 'var(--clr-on-surface-variant)', marginBottom: 'var(--sp-lg)' }}>
+        <h1 className={styles.title}>Recetas</h1>
+        <p className={styles.subtitle}>
           Explora la riqueza de la gastronomía colombiana y del mundo.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 'var(--sp-gutter)' }}>
+        <div className={styles.grid}>
           {recipes.map(r => (
             <RecipeCard key={r._id} recipe={r} onToggleFavorite={toggleFavorite} />
           ))}

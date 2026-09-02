@@ -57,6 +57,7 @@
 
 .chip {
   padding: 8px 18px;
+  min-height: 44px;
   border-radius: var(--r-md);
   font-size: var(--text-label);
   font-weight: 700;

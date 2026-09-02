@@ -64,3 +64,10 @@
 .lg { padding: 18px 36px; font-size: var(--text-body); }
 
 .fullWidth { width: 100%; }
+
+/* ── Mobile adjustments ── */
+@media (max-width: 768px) {
+  .btn { padding: 12px 24px; }
+  .sm  { padding: 10px 16px; }
+  .lg  { padding: 14px 28px; }
+}
