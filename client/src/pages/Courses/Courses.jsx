@@ -61,16 +61,18 @@ export default function Courses() {
           </div>
         </div>
 
-        <div className={styles.chips}>
-          {CATEGORIES.map(cat => (
-            <button
-              key={cat}
-              className={`${styles.chip} ${activeCategory === cat ? styles.active : ''}`}
-              onClick={() => setActive(cat)}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className={styles.chipsScroll}>
+          <div className={styles.chips}>
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                className={`${styles.chip} ${activeCategory === cat ? styles.active : ''}`}
+                onClick={() => setActive(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className={styles.grid} ref={gridRef}>
