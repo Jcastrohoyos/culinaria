@@ -5,8 +5,9 @@
   gap: 8px;
   font-family: var(--font-sans);
   font-size: var(--text-label);
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   border-radius: var(--r-md);
   padding: 14px 28px;
   transition: transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
@@ -15,24 +16,43 @@
   text-decoration: none;
 }
 
-.btn:hover { transform: translateY(-2px); }
-.btn:active { transform: translateY(0); }
+.btn:hover   { transform: translateY(-2px); }
+.btn:active  { transform: translateY(0); }
+.btn:disabled { opacity: 0.55; pointer-events: none; }
 
-/* Variants */
+/* Primary — Burdeos */
 .primary {
   background: var(--clr-primary);
   color: var(--clr-on-primary);
-  box-shadow: 0 4px 14px rgba(140, 78, 55, 0.30);
+  box-shadow: 0 4px 16px rgba(123,44,47,0.30);
 }
-.primary:hover { background: #7a4230; }
+.primary:hover {
+  background: var(--clr-primary-hover);
+  box-shadow: 0 6px 20px rgba(123,44,47,0.40);
+}
 
+/* Ghost — Burdeos outline */
 .ghost {
   background: transparent;
   color: var(--clr-primary);
   border: 1.5px solid var(--clr-primary);
 }
-.ghost:hover { background: var(--clr-surface-container); }
+.ghost:hover {
+  background: var(--clr-primary-light);
+}
 
+/* Gold — Dorado premium */
+.gold {
+  background: var(--clr-gold);
+  color: var(--clr-inverse-surface);
+  box-shadow: var(--shadow-gold);
+}
+.gold:hover {
+  background: var(--clr-gold-dark);
+  box-shadow: 0 6px 20px rgba(201,166,107,0.40);
+}
+
+/* Surface — neutro */
 .surface {
   background: var(--clr-surface-container);
   color: var(--clr-on-surface);

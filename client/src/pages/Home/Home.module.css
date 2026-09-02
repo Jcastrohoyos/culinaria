@@ -1,8 +1,8 @@
-/* ── Hero ──────────────────────────────────────── */
+/* ── Hero ─────────────────────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 82vh;
+  min-height: 86vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -22,9 +22,9 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(30, 27, 24, 0.82) 0%,
-    rgba(30, 27, 24, 0.45) 55%,
-    transparent 100%
+    rgba(46, 46, 46, 0.88) 0%,
+    rgba(46, 46, 46, 0.55) 55%,
+    rgba(46, 46, 46, 0.15) 100%
   );
   z-index: 1;
 }
@@ -40,27 +40,42 @@
 }
 
 .heroLabel {
-  font-size: var(--text-label);
+  font-size: var(--text-caption);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--clr-primary-light);
+  color: var(--clr-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Línea dorada antes del label */
+.heroLabel::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--clr-gold);
 }
 
 .heroTitle {
   font-family: var(--font-serif);
   font-size: var(--text-display);
   font-weight: 400;
-  color: #fff;
+  color: var(--clr-inverse-on-surface);   /* Marfil */
   line-height: 1.12;
 }
 
-.heroAccent { color: var(--clr-primary-container); font-style: italic; }
+.heroAccent {
+  color: var(--clr-gold);
+  font-style: italic;
+}
 
 .heroDesc {
   font-size: var(--text-body-lg);
-  color: rgba(255,255,255,0.80);
-  line-height: 1.6;
+  color: rgba(248,245,240,0.75);
+  line-height: 1.65;
   max-width: 520px;
 }
 
@@ -68,21 +83,30 @@
   display: flex;
   gap: var(--sp-sm);
   flex-wrap: wrap;
+  padding-top: var(--sp-sm);
 }
 
-/* ── Features Bento ─────────────────────────────── */
-.section {
-  padding: var(--sp-lg) 0;
-}
+/* ── Sección genérica ────────────────────────────────── */
+.section { padding: var(--sp-lg) 0; }
 
 .sectionLabel {
-  font-size: var(--text-label);
+  font-size: var(--text-caption);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--clr-primary);
+  color: var(--clr-gold-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.sectionLabel::before {
+  content: '';
   display: block;
-  margin-bottom: 6px;
+  width: 24px;
+  height: 1px;
+  background: var(--clr-gold);
 }
 
 .sectionTitle {
@@ -98,6 +122,12 @@
   margin-bottom: var(--sp-lg);
 }
 
+.sectionHeader .sectionLabel {
+  justify-content: center;
+}
+.sectionHeader .sectionLabel::before { display: none; }
+
+/* ── Bento grid ──────────────────────────────────────── */
 .bento {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -110,10 +140,13 @@
   overflow: hidden;
   position: relative;
   box-shadow: var(--shadow-md);
-  transition: box-shadow var(--t-base);
+  transition: box-shadow var(--t-base), transform var(--t-base);
 }
 
-.bentoCard:hover { box-shadow: var(--shadow-lg); }
+.bentoCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
 
 .bentoWide { grid-column: span 2; }
 
@@ -130,7 +163,12 @@
 .bentoGrad {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(30,27,24,0.82) 0%, rgba(30,27,24,0.30) 50%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(46,46,46,0.88) 0%,
+    rgba(46,46,46,0.35) 50%,
+    transparent 100%
+  );
 }
 
 .bentoText {
@@ -148,11 +186,12 @@
   width: 44px;
   height: 44px;
   border-radius: var(--r-full);
-  background: rgba(255,255,255,0.12);
+  background: rgba(201,166,107,0.20);
+  border: 1px solid rgba(201,166,107,0.40);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--clr-gold);
   margin-bottom: 4px;
   backdrop-filter: blur(4px);
 }
@@ -160,18 +199,19 @@
 .bentoCardTitle {
   font-family: var(--font-serif);
   font-size: var(--text-h2);
-  color: #fff;
+  color: var(--clr-inverse-on-surface);
   font-weight: 400;
 }
 
 .bentoCardDesc {
   font-size: var(--text-body);
-  color: rgba(255,255,255,0.80);
+  color: rgba(248,245,240,0.75);
 }
 
-/* Solid bento cards */
+/* Solid bento */
 .bentoSolid {
-  background: var(--clr-surface-low);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-outline-variant);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,8 +220,8 @@
 }
 
 .bentoSolidIcon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--r-full);
   background: var(--clr-primary);
   color: var(--clr-on-primary);
@@ -189,6 +229,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
+  box-shadow: 0 4px 14px rgba(123,44,47,0.30);
 }
 
 .bentoSolidTitle {
@@ -204,9 +245,11 @@
   line-height: 1.5;
 }
 
-/* ── Featured courses ─────────────────────────── */
+/* ── Featured courses ────────────────────────────────── */
 .sectionBg {
   background: var(--clr-surface-low);
+  border-top: 1px solid var(--clr-outline-variant);
+  border-bottom: 1px solid var(--clr-outline-variant);
 }
 
 .sectionRow {
@@ -218,15 +261,20 @@
 
 .viewAll {
   font-size: var(--text-label);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   color: var(--clr-primary);
   display: flex;
   align-items: center;
   gap: 4px;
-  transition: gap var(--t-fast);
+  transition: gap var(--t-fast), color var(--t-fast);
+  text-transform: uppercase;
 }
 
-.viewAll:hover { gap: 10px; }
+.viewAll:hover {
+  gap: 10px;
+  color: var(--clr-primary-hover);
+}
 
 .grid3 {
   display: grid;
@@ -234,9 +282,9 @@
   gap: var(--sp-gutter);
 }
 
-/* ── Testimonial ──────────────────────────────── */
+/* ── Testimonial ─────────────────────────────────────── */
 .testimonial {
-  background: linear-gradient(135deg, var(--clr-surface-container) 0%, var(--clr-surface-low) 100%);
+  background: var(--clr-inverse-surface);   /* Gris carbón */
   border-radius: var(--r-xl);
   padding: var(--sp-lg);
   display: flex;
@@ -244,16 +292,18 @@
   gap: var(--sp-lg);
   position: relative;
   overflow: hidden;
+  /* Borde dorado */
+  border: 1px solid rgba(201,166,107,0.25);
 }
 
 .testimonialQuote {
   position: absolute;
-  top: -16px;
+  top: -24px;
   right: var(--sp-md);
   font-family: var(--font-serif);
-  font-size: 9rem;
-  color: var(--clr-outline-variant);
-  opacity: 0.35;
+  font-size: 10rem;
+  color: var(--clr-gold);
+  opacity: 0.08;
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -264,8 +314,8 @@
   height: 180px;
   border-radius: var(--r-full);
   overflow: hidden;
-  border: 4px solid var(--clr-surface);
-  box-shadow: var(--shadow-md);
+  border: 3px solid var(--clr-gold);       /* borde dorado */
+  box-shadow: var(--shadow-gold);
   flex-shrink: 0;
 }
 
@@ -286,13 +336,13 @@
 .stars {
   display: flex;
   gap: 3px;
-  color: var(--clr-primary);
+  color: var(--clr-gold);
 }
 
 .testimonialText {
   font-family: var(--font-serif);
   font-size: var(--text-h1);
-  color: var(--clr-on-surface);
+  color: var(--clr-inverse-on-surface);
   font-weight: 400;
   font-style: italic;
   line-height: 1.4;
@@ -301,13 +351,15 @@
 .testimonialName {
   font-size: var(--text-label);
   font-weight: 700;
-  color: var(--clr-on-surface);
+  color: var(--clr-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-top: 4px;
 }
 
 .testimonialRole {
   font-size: var(--text-caption);
-  color: var(--clr-on-surface-variant);
+  color: rgba(248,245,240,0.50);
 }
 
 @media (max-width: 1024px) {

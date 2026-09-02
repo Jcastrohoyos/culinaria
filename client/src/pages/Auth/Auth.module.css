@@ -5,6 +5,9 @@
   justify-content: center;
   background: var(--clr-bg);
   padding: var(--sp-md);
+  /* Patrón sutil de fondo */
+  background-image: radial-gradient(circle at 20% 80%, rgba(123,44,47,0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(201,166,107,0.06) 0%, transparent 50%);
 }
 
 .card {
@@ -26,7 +29,7 @@
 
 .brandIcon {
   font-size: 3rem !important;
-  color: var(--clr-primary);
+  color: var(--clr-gold);
 }
 
 .brandName {
@@ -34,6 +37,7 @@
   font-size: var(--text-h1);
   color: var(--clr-primary);
   font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .heading {
@@ -54,13 +58,16 @@
 
 .form {
   width: 100%;
-  background: var(--clr-surface-low);
+  background: var(--clr-surface);
   border-radius: var(--r-xl);
   padding: var(--sp-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--clr-outline-variant);
   display: flex;
   flex-direction: column;
   gap: var(--sp-md);
+  /* Línea dorada superior */
+  border-top: 3px solid var(--clr-gold);
 }
 
 .field {
@@ -70,16 +77,16 @@
 }
 
 .label {
-  font-size: var(--text-label);
+  font-size: var(--text-caption);
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--clr-on-surface);
+  color: var(--clr-on-surface-variant);
 }
 
 .input {
-  background: var(--clr-surface);
-  border: 1.5px solid transparent;
+  background: var(--clr-surface-low);
+  border: 1.5px solid var(--clr-outline-variant);
   border-radius: var(--r-md);
   padding: 14px 16px;
   font-size: var(--text-body);
@@ -92,23 +99,19 @@
 
 .input:focus {
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(140,78,55,0.12);
+  box-shadow: 0 0 0 3px rgba(123,44,47,0.10);
+  background: var(--clr-surface);
 }
 
-.passwordWrap {
-  position: relative;
-}
-
-.passwordWrap .input {
-  padding-right: 48px;
-}
+.passwordWrap { position: relative; }
+.passwordWrap .input { padding-right: 48px; }
 
 .eyeBtn {
   position: absolute;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--clr-on-surface-variant);
+  color: var(--clr-outline);
   transition: color var(--t-fast);
   padding: 4px;
 }
@@ -160,6 +163,7 @@
 
 .termsText a {
   color: var(--clr-primary);
+  font-weight: 600;
 }
 
 .termsText a:hover { text-decoration: underline; }
@@ -181,7 +185,7 @@
 
 .footer a {
   color: var(--clr-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footer a:hover { text-decoration: underline; }

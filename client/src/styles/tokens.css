@@ -1,47 +1,52 @@
 /* ============================================================
    CULINARIA — Design Tokens
-   Paleta: Culinary Heritage (terracotta warm minimalist)
+   Paleta: Marfil · Burdeos · Dorado · Gris Carbón
    ============================================================ */
 :root {
-  /* Colors */
-  --clr-primary:               #8c4e37;
-  --clr-on-primary:            #ffffff;
-  --clr-primary-container:     #d98e73;
-  --clr-on-primary-container:  #5c2814;
-  --clr-primary-light:         #ffb59b;
+  /* ── Colores principales ── */
+  --clr-primary:              #7b2c2f;   /* Burdeos — acciones, CTA, activos */
+  --clr-on-primary:           #ffffff;
+  --clr-primary-hover:        #621f22;   /* Burdeos oscuro hover */
+  --clr-primary-light:        #f0d9da;   /* Burdeos muy suave — fondos de badge */
+  --clr-on-primary-container: #4a1215;
 
-  --clr-secondary:             #56642b;
-  --clr-on-secondary:          #ffffff;
-  --clr-secondary-container:   #d6e7a1;
-  --clr-on-secondary-container:#5a682f;
+  --clr-gold:                 #c9a66b;   /* Dorado — detalles premium, iconos, separadores */
+  --clr-gold-light:           #f0e4cc;   /* Dorado muy suave — fondos de chip */
+  --clr-gold-dark:            #a07e45;   /* Dorado oscuro hover */
 
-  --clr-tertiary:              #146964;
-  --clr-on-tertiary:           #ffffff;
-  --clr-tertiary-container:    #63ada7;
+  --clr-secondary:            #5a4a3a;   /* Marrón cálido — complementario */
+  --clr-on-secondary:         #ffffff;
+  --clr-secondary-container:  #e8ddd3;
+  --clr-on-secondary-container:#3b2e22;
 
-  --clr-error:                 #ba1a1a;
-  --clr-error-container:       #ffdad6;
+  --clr-tertiary:             #4a6355;   /* Verde oliva — etiquetas, éxito */
+  --clr-on-tertiary:          #ffffff;
+  --clr-tertiary-container:   #c8ddd3;
 
-  /* Surface layers */
-  --clr-bg:                    #fff8f5;
-  --clr-surface:               #ffffff;
-  --clr-surface-low:           #fbf2ed;
-  --clr-surface-container:     #f5ece7;
-  --clr-surface-high:          #efe6e2;
-  --clr-surface-highest:       #e9e1dc;
-  --clr-surface-dim:           #e1d8d4;
+  --clr-error:                #ba1a1a;
+  --clr-error-container:      #ffdad6;
 
-  /* Text */
-  --clr-on-surface:            #1e1b18;
-  --clr-on-surface-variant:    #53433e;
-  --clr-outline:               #85736d;
-  --clr-outline-variant:       #d8c2bb;
+  /* ── Superficies ── */
+  --clr-bg:                   #f8f5f0;   /* Marfil — fondo base */
+  --clr-surface:              #ffffff;   /* Blanco puro — tarjetas */
+  --clr-surface-low:          #f4f0e8;   /* Marfil suave — fondos secundarios */
+  --clr-surface-container:    #ede8df;   /* Marfil medio — contenedores */
+  --clr-surface-high:         #e5dfd4;   /* Marfil oscuro — hover, divisores */
+  --clr-surface-highest:      #ddd6c8;   /* Marfil más oscuro */
+  --clr-surface-dim:          #d4ccc0;
 
-  /* Inverse */
-  --clr-inverse-surface:       #34302c;
-  --clr-inverse-on-surface:    #f8efea;
+  /* ── Texto ── */
+  --clr-on-surface:           #2e2e2e;   /* Gris carbón — texto principal */
+  --clr-on-surface-variant:   #6b6156;   /* Gris cálido — texto secundario */
+  --clr-outline:              #9e9287;   /* Bordes medios */
+  --clr-outline-variant:      #d4ccc0;   /* Bordes suaves */
 
-  /* Typography */
+  /* ── Inverse ── */
+  --clr-inverse-surface:      #2e2e2e;   /* Gris carbón */
+  --clr-inverse-on-surface:   #f8f5f0;
+  --clr-inverse-primary:      #f0d9da;
+
+  /* ── Tipografía ── */
   --font-serif:   'Libre Caslon Text', Georgia, serif;
   --font-sans:    'Work Sans', system-ui, sans-serif;
 
@@ -53,35 +58,36 @@
   --text-label:     0.875rem;
   --text-caption:   0.75rem;
 
-  /* Spacing */
-  --sp-xs:   8px;
-  --sp-sm:   12px;
-  --sp-md:   24px;
-  --sp-lg:   48px;
+  /* ── Espaciado ── */
+  --sp-xs:      8px;
+  --sp-sm:      12px;
+  --sp-md:      24px;
+  --sp-lg:      48px;
   --sp-gutter:  24px;
   --sp-page-x:  40px;
   --container:  1200px;
 
-  /* Radius */
+  /* ── Radios ── */
   --r-sm:   4px;
   --r-md:   12px;
   --r-lg:   16px;
   --r-xl:   24px;
   --r-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm:   0 2px 8px rgba(45,41,38,0.04);
-  --shadow-md:   0 4px 20px rgba(45,41,38,0.07);
-  --shadow-lg:   0 8px 32px rgba(45,41,38,0.12);
-  --shadow-header: 0 1px 8px rgba(0,0,0,0.04);
-  --shadow-sidebar:4px 0 20px rgba(45,41,38,0.04);
+  /* ── Sombras cálidas ── */
+  --shadow-sm:     0 2px 8px  rgba(46, 46, 46, 0.06);
+  --shadow-md:     0 4px 20px rgba(46, 46, 46, 0.09);
+  --shadow-lg:     0 8px 32px rgba(46, 46, 46, 0.14);
+  --shadow-gold:   0 4px 16px rgba(201, 166, 107, 0.25);
+  --shadow-header: 0 1px 8px  rgba(46, 46, 46, 0.06);
+  --shadow-sidebar:4px 0 20px rgba(46, 46, 46, 0.05);
 
-  /* Layout */
-  --sidebar-w:    272px;
-  --header-h:     80px;
+  /* ── Layout ── */
+  --sidebar-w: 272px;
+  --header-h:  80px;
 
-  /* Transitions */
-  --t-fast:  150ms ease;
-  --t-base:  220ms ease;
-  --t-slow:  400ms ease;
+  /* ── Transiciones ── */
+  --t-fast: 150ms ease;
+  --t-base: 220ms ease;
+  --t-slow: 400ms ease;
 }

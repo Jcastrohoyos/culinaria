@@ -1,6 +1,6 @@
 .footer {
-  background: var(--clr-surface);
-  border-top: 1px solid var(--clr-outline-variant);
+  background: var(--clr-inverse-surface);   /* Gris carbón */
+  border-top: 3px solid var(--clr-gold);    /* línea dorada superior */
   padding: var(--sp-lg) 0 var(--sp-md);
   margin-top: var(--sp-lg);
 }
@@ -26,28 +26,31 @@
 }
 
 .brandIcon {
-  color: var(--clr-primary);
-  opacity: 0.7;
+  color: var(--clr-gold);
+  font-size: 1.5rem !important;
 }
 
 .brandName {
   font-family: var(--font-serif);
   font-size: var(--text-h2);
-  color: var(--clr-on-surface-variant);
+  color: var(--clr-inverse-on-surface);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .tagline {
   font-size: var(--text-body);
-  color: var(--clr-on-surface-variant);
-  line-height: 1.5;
+  color: rgba(248,245,240,0.60);
+  line-height: 1.6;
 }
 
 .heading {
-  font-size: var(--text-label);
+  font-size: var(--text-caption);
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--clr-on-surface);
+  letter-spacing: 0.12em;
+  color: var(--clr-gold);
   text-transform: uppercase;
+  margin-bottom: 4px;
 }
 
 .socialRow {
@@ -62,41 +65,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--clr-on-surface-variant);
-  transition: color var(--t-fast), background var(--t-fast);
+  color: rgba(248,245,240,0.55);
+  border: 1px solid rgba(248,245,240,0.15);
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
 }
 
 .socialBtn:hover {
-  color: var(--clr-primary);
-  background: var(--clr-surface-container);
+  color: var(--clr-gold);
+  border-color: var(--clr-gold);
+  background: rgba(201,166,107,0.10);
 }
 
 .email {
   font-size: var(--text-caption);
-  color: var(--clr-on-surface-variant);
+  color: rgba(248,245,240,0.50);
 }
 
 .address {
   font-size: var(--text-body);
-  color: var(--clr-on-surface-variant);
+  color: rgba(248,245,240,0.60);
   line-height: 1.6;
 }
 
 .divider {
   height: 1px;
-  background: var(--clr-outline-variant);
-  opacity: 0.4;
+  background: rgba(201,166,107,0.20);
   margin-bottom: var(--sp-sm);
 }
 
 .copy {
   text-align: center;
   font-size: var(--text-caption);
-  color: var(--clr-outline);
+  color: rgba(248,245,240,0.35);
 }
 
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+  .grid { grid-template-columns: 1fr; }
 }

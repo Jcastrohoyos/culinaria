@@ -2,8 +2,9 @@
   position: relative;
   border-radius: var(--r-lg);
   overflow: hidden;
-  background: var(--clr-surface-container);
+  background: var(--clr-surface);
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--clr-outline-variant);
   text-decoration: none;
   color: inherit;
   display: block;
@@ -18,6 +19,7 @@
 .imgWrap {
   height: 200px;
   overflow: hidden;
+  position: relative;
 }
 
 .imgWrap img {
@@ -27,9 +29,17 @@
   transition: transform var(--t-slow);
 }
 
-.card:hover .imgWrap img {
-  transform: scale(1.06);
+.card:hover .imgWrap img { transform: scale(1.06); }
+
+.imgWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(123,44,47,0.40), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--t-base);
 }
+.card:hover .imgWrap::after { opacity: 1; }
 
 .favBtn {
   position: absolute;
@@ -38,7 +48,7 @@
   width: 34px;
   height: 34px;
   border-radius: var(--r-full);
-  background: rgba(255,248,245,0.85);
+  background: rgba(248,245,240,0.90);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
@@ -46,13 +56,14 @@
   color: var(--clr-primary);
   border: none;
   cursor: pointer;
-  transition: background var(--t-fast), transform var(--t-fast);
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   z-index: 2;
 }
 
 .favBtn:hover {
   background: var(--clr-surface);
-  transform: scale(1.1);
+  transform: scale(1.12);
+  box-shadow: var(--shadow-gold);
 }
 
 .body {
@@ -60,6 +71,18 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  background: var(--clr-surface);
+}
+
+/* Línea dorada decorativa */
+.body::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--clr-gold);
+  border-radius: var(--r-full);
+  margin-bottom: 4px;
 }
 
 .title {
