@@ -130,31 +130,12 @@
   .topRow     { flex-direction: column; align-items: stretch; }
   .searchWrap { max-width: 100%; }
 
-  /* Scroll wrapper: full viewport width con técnica center+transform */
-  .chipsScroll {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .chipsScroll::-webkit-scrollbar { display: none; }
-
-  .chips {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 8px;
-    padding: 0 var(--sp-page-x) 8px;
-    width: max-content;
-  }
+  .chips { gap: 6px; }
 
   .chip {
-    padding: 10px 16px;
+    padding: 8px 14px;
     font-size: var(--text-caption);
     letter-spacing: 0.02em;
-    flex-shrink: 0;
   }
 }
 
