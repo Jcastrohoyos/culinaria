@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  margin-left: var(--sidebar-w);
+  padding-top: var(--header-h);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-bg);
+}
+
+.content {
+  flex: 1;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 30, 27, 0.45);
+  z-index: 45;
+}
+
+.overlay.visible {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,300 @@
+.page {
+  padding: var(--sp-lg) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  color: var(--clr-on-surface);
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: var(--text-body-lg);
+  color: var(--clr-on-surface-variant);
+  margin-top: 4px;
+}
+
+.streak {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--clr-surface-low);
+  padding: 8px 18px;
+  border-radius: var(--r-full);
+  font-size: var(--text-label);
+  font-weight: 700;
+  color: var(--clr-on-surface);
+}
+
+.streakIcon { color: var(--clr-primary); }
+
+/* Section */
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  color: var(--clr-on-surface);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--sp-md);
+}
+
+.sectionIcon { color: var(--clr-primary); }
+
+/* Active courses */
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-gutter);
+}
+
+.courseCard {
+  background: var(--clr-surface-container);
+  border-radius: var(--r-lg);
+  padding: var(--sp-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  transition: transform var(--t-base);
+  cursor: pointer;
+}
+
+.courseCard:hover { transform: translateY(-3px); }
+
+.courseTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.levelBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--r-sm);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--clr-secondary-container);
+  color: var(--clr-on-secondary-container);
+  margin-bottom: 6px;
+}
+
+.courseTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  color: var(--clr-on-surface);
+  font-weight: 400;
+  transition: color var(--t-fast);
+}
+
+.courseCard:hover .courseTitle { color: var(--clr-primary); }
+
+.pct {
+  font-size: var(--text-label);
+  font-weight: 700;
+  color: var(--clr-primary);
+  background: var(--clr-surface-highest);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--clr-surface-dim);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--clr-primary);
+  border-radius: var(--r-full);
+  transition: width 0.5s ease;
+}
+
+.courseFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.nextLesson {
+  font-size: var(--text-caption);
+  color: var(--clr-on-surface-variant);
+  flex: 1;
+}
+
+/* Two-column layout */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--sp-gutter);
+  align-items: start;
+}
+
+/* Upcoming classes */
+.upcomingCard {
+  background: var(--clr-surface-container);
+  border-radius: var(--r-lg);
+  padding: var(--sp-sm);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.classItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: 12px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background var(--t-fast);
+}
+
+.classItem:hover { background: var(--clr-surface-high); }
+
+.dateChip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-md);
+  background: var(--clr-primary-light);
+  color: var(--clr-on-primary-container);
+  justify-content: center;
+  font-size: var(--text-caption);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.dateMonth { text-transform: uppercase; font-size: 10px; }
+.dateDay { font-size: var(--text-label); }
+
+.classInfo { flex: 1; min-width: 0; }
+
+.className {
+  font-size: var(--text-label);
+  font-weight: 600;
+  color: var(--clr-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.classMeta {
+  font-size: var(--text-caption);
+  color: var(--clr-on-surface-variant);
+}
+
+.divider {
+  height: 1px;
+  background: var(--clr-outline-variant);
+  opacity: 0.35;
+  margin: 2px 0;
+}
+
+/* Favorites */
+.favGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-gutter);
+}
+
+.sectionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-md);
+}
+
+.viewAll {
+  font-size: var(--text-label);
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+.viewAll:hover { text-decoration: underline; }
+
+/* Certificates */
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-gutter);
+}
+
+.certCard {
+  background: var(--clr-surface-container);
+  border-radius: var(--r-lg);
+  padding: var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: box-shadow var(--t-base);
+}
+
+.certCard:hover { box-shadow: var(--shadow-md); }
+
+.certIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--r-full);
+  background: var(--clr-tertiary-container);
+  color: var(--clr-on-tertiary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certName {
+  font-size: var(--text-label);
+  font-weight: 700;
+  color: var(--clr-on-surface);
+}
+
+.certDate {
+  font-size: var(--text-caption);
+  color: var(--clr-on-surface-variant);
+}
+
+.certCardLocked {
+  opacity: 0.55;
+  border: 1.5px dashed var(--clr-outline-variant);
+  background: transparent;
+}
+
+@media (max-width: 1024px) {
+  .twoCol { grid-template-columns: 1fr; }
+  .certGrid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .coursesGrid { grid-template-columns: 1fr; }
+  .favGrid { grid-template-columns: 1fr; }
+  .certGrid { grid-template-columns: repeat(2,1fr); }
+}

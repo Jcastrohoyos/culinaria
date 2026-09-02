@@ -1,0 +1,113 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);
+  right: 0;
+  height: var(--header-h);
+  background: rgba(255, 248, 245, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-header);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-page-x);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.navLink {
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--clr-on-surface-variant);
+  transition: color var(--t-fast);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.navLink:hover {
+  color: var(--clr-on-surface);
+}
+
+.navLink.active {
+  color: var(--clr-primary);
+  border-bottom-color: var(--clr-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-on-surface-variant);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.iconBtn:hover {
+  background: var(--clr-surface-high);
+  color: var(--clr-primary);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-full);
+  overflow: hidden;
+  border: 2px solid var(--clr-surface-highest);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--clr-primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-primary);
+  font-weight: 700;
+  font-size: var(--text-label);
+}
+
+.menuBtn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-md);
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-on-surface-variant);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    left: 0;
+  }
+  .menuBtn {
+    display: flex;
+  }
+  .nav {
+    display: none;
+  }
+}
