@@ -12,9 +12,11 @@ body {
   background-color: var(--clr-bg);
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
+  /* Evita scroll horizontal en móvil */
+  overflow-x: hidden;
 }
 
-/* Scrollbar sutil dorada */
+/* Scrollbar — oculto en móvil, dorado en desktop */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--clr-surface-low); }
 ::-webkit-scrollbar-thumb {
@@ -23,10 +25,18 @@ body {
   opacity: 0.6;
 }
 
+@media (max-width: 768px) {
+  ::-webkit-scrollbar { width: 0; }
+}
+
 img, video { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; font-family: inherit; border: none; background: none; }
-input, textarea, select { font-family: var(--font-sans); font-size: var(--text-body); outline: none; }
+input, textarea, select {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  outline: none;
+}
 
 /* Material Symbols */
 .material-symbols-outlined {
@@ -38,7 +48,7 @@ input, textarea, select { font-family: var(--font-sans); font-size: var(--text-b
   user-select: none;
 }
 
-/* Línea decorativa dorada — usar como separador de sección */
+/* Separador dorado */
 .gold-divider {
   width: 48px;
   height: 2px;
@@ -53,13 +63,17 @@ input, textarea, select { font-family: var(--font-sans); font-size: var(--text-b
   clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
+/* Contenedor centrado */
 .container {
   max-width: var(--container);
   margin-inline: auto;
   padding-inline: var(--sp-page-x);
 }
 
+/* Tap target mínimo en móvil */
 @media (max-width: 768px) {
-  .container { padding-inline: var(--sp-md); }
-  :root { --sp-page-x: 16px; }
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

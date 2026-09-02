@@ -11,22 +11,30 @@
   display: flex;
   flex-direction: column;
   background: var(--clr-bg);
+  /* Evita overflow horizontal en cualquier breakpoint */
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 .content {
   flex: 1;
 }
 
+/* Overlay móvil */
 .overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(34, 30, 27, 0.45);
+  background: rgba(46, 46, 46, 0.65);
+  backdrop-filter: blur(2px);
   z-index: 45;
+  opacity: 0;
+  transition: opacity var(--t-base);
 }
 
 .overlay.visible {
   display: block;
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {

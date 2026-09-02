@@ -86,7 +86,7 @@ export default function RecipeDetail() {
         <div className={styles.heroBg} style={{ backgroundImage: `url('${recipe.image}')` }} />
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <div className="recipeAnimate">
+          <div className={`${styles.heroText} recipeAnimate`}>
             <span className={styles.tag}>
               <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>restaurant</span>
               {recipe.category}

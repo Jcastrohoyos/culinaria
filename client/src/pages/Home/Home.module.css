@@ -1,4 +1,4 @@
-/* ── Hero ─────────────────────────────────────────────── */
+/* ── Hero ─────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
@@ -22,9 +22,9 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(46, 46, 46, 0.88) 0%,
-    rgba(46, 46, 46, 0.55) 55%,
-    rgba(46, 46, 46, 0.15) 100%
+    rgba(46,46,46,0.90) 0%,
+    rgba(46,46,46,0.60) 55%,
+    rgba(46,46,46,0.20) 100%
   );
   z-index: 1;
 }
@@ -37,6 +37,7 @@
   gap: var(--sp-md);
   max-width: 640px;
   padding: var(--sp-lg) 0;
+  width: 100%;
 }
 
 .heroLabel {
@@ -50,31 +51,28 @@
   gap: 10px;
 }
 
-/* Línea dorada antes del label */
 .heroLabel::before {
   content: '';
   display: block;
   width: 32px;
   height: 1px;
   background: var(--clr-gold);
+  flex-shrink: 0;
 }
 
 .heroTitle {
   font-family: var(--font-serif);
   font-size: var(--text-display);
   font-weight: 400;
-  color: var(--clr-inverse-on-surface);   /* Marfil */
+  color: var(--clr-inverse-on-surface);
   line-height: 1.12;
 }
 
-.heroAccent {
-  color: var(--clr-gold);
-  font-style: italic;
-}
+.heroAccent { color: var(--clr-gold); font-style: italic; }
 
 .heroDesc {
   font-size: var(--text-body-lg);
-  color: rgba(248,245,240,0.75);
+  color: rgba(248,245,240,0.78);
   line-height: 1.65;
   max-width: 520px;
 }
@@ -86,7 +84,7 @@
   padding-top: var(--sp-sm);
 }
 
-/* ── Sección genérica ────────────────────────────────── */
+/* ── Sección ── */
 .section { padding: var(--sp-lg) 0; }
 
 .sectionLabel {
@@ -107,6 +105,7 @@
   width: 24px;
   height: 1px;
   background: var(--clr-gold);
+  flex-shrink: 0;
 }
 
 .sectionTitle {
@@ -122,12 +121,10 @@
   margin-bottom: var(--sp-lg);
 }
 
-.sectionHeader .sectionLabel {
-  justify-content: center;
-}
+.sectionHeader .sectionLabel { justify-content: center; }
 .sectionHeader .sectionLabel::before { display: none; }
 
-/* ── Bento grid ──────────────────────────────────────── */
+/* ── Bento ── */
 .bento {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -143,11 +140,7 @@
   transition: box-shadow var(--t-base), transform var(--t-base);
 }
 
-.bentoCard:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
-}
-
+.bentoCard:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 .bentoWide { grid-column: span 2; }
 
 .bentoImg {
@@ -163,19 +156,12 @@
 .bentoGrad {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(46,46,46,0.88) 0%,
-    rgba(46,46,46,0.35) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,rgba(46,46,46,0.88) 0%,rgba(46,46,46,0.30) 50%,transparent 100%);
 }
 
 .bentoText {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   padding: var(--sp-md);
   display: flex;
   flex-direction: column;
@@ -206,9 +192,9 @@
 .bentoCardDesc {
   font-size: var(--text-body);
   color: rgba(248,245,240,0.75);
+  line-height: 1.5;
 }
 
-/* Solid bento */
 .bentoSolid {
   background: var(--clr-surface);
   border: 1px solid var(--clr-outline-variant);
@@ -220,8 +206,7 @@
 }
 
 .bentoSolidIcon {
-  width: 52px;
-  height: 52px;
+  width: 52px; height: 52px;
   border-radius: var(--r-full);
   background: var(--clr-primary);
   color: var(--clr-on-primary);
@@ -239,17 +224,14 @@
   font-weight: 400;
 }
 
-.bentoSolidDesc {
-  font-size: var(--text-body);
-  color: var(--clr-on-surface-variant);
-  line-height: 1.5;
-}
+.bentoSolidDesc { font-size: var(--text-body); color: var(--clr-on-surface-variant); line-height: 1.5; }
 
-/* ── Featured courses ────────────────────────────────── */
+/* ── Cursos destacados ── */
 .sectionBg {
   background: var(--clr-surface-low);
   border-top: 1px solid var(--clr-outline-variant);
   border-bottom: 1px solid var(--clr-outline-variant);
+  padding: var(--sp-lg) 0;
 }
 
 .sectionRow {
@@ -257,6 +239,7 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: var(--sp-md);
+  gap: var(--sp-sm);
 }
 
 .viewAll {
@@ -267,14 +250,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  transition: gap var(--t-fast), color var(--t-fast);
   text-transform: uppercase;
+  transition: gap var(--t-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.viewAll:hover {
-  gap: 10px;
-  color: var(--clr-primary-hover);
-}
+.viewAll:hover { gap: 10px; }
 
 .grid3 {
   display: grid;
@@ -282,9 +264,9 @@
   gap: var(--sp-gutter);
 }
 
-/* ── Testimonial ─────────────────────────────────────── */
+/* ── Testimonial ── */
 .testimonial {
-  background: var(--clr-inverse-surface);   /* Gris carbón */
+  background: var(--clr-inverse-surface);
   border-radius: var(--r-xl);
   padding: var(--sp-lg);
   display: flex;
@@ -292,38 +274,31 @@
   gap: var(--sp-lg);
   position: relative;
   overflow: hidden;
-  /* Borde dorado */
   border: 1px solid rgba(201,166,107,0.25);
 }
 
 .testimonialQuote {
   position: absolute;
-  top: -24px;
-  right: var(--sp-md);
+  top: -24px; right: var(--sp-md);
   font-family: var(--font-serif);
   font-size: 10rem;
   color: var(--clr-gold);
-  opacity: 0.08;
+  opacity: 0.07;
   line-height: 1;
   pointer-events: none;
   user-select: none;
 }
 
 .testimonialAvatar {
-  width: 180px;
-  height: 180px;
+  width: 180px; height: 180px;
   border-radius: var(--r-full);
   overflow: hidden;
-  border: 3px solid var(--clr-gold);       /* borde dorado */
+  border: 3px solid var(--clr-gold);
   box-shadow: var(--shadow-gold);
   flex-shrink: 0;
 }
 
-.testimonialAvatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.testimonialAvatar img { width: 100%; height: 100%; object-fit: cover; }
 
 .testimonialBody {
   display: flex;
@@ -333,11 +308,7 @@
   z-index: 1;
 }
 
-.stars {
-  display: flex;
-  gap: 3px;
-  color: var(--clr-gold);
-}
+.stars { display: flex; gap: 3px; color: var(--clr-gold); }
 
 .testimonialText {
   font-family: var(--font-serif);
@@ -357,22 +328,48 @@
   margin-top: 4px;
 }
 
-.testimonialRole {
-  font-size: var(--text-caption);
-  color: rgba(248,245,240,0.50);
-}
+.testimonialRole { font-size: var(--text-caption); color: rgba(248,245,240,0.50); }
 
+/* ══ Responsive ══════════════════════════════════ */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .bento { grid-template-columns: repeat(2,1fr); grid-auto-rows: 260px; }
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
+  }
   .bentoWide { grid-column: span 2; }
-  .grid3 { grid-template-columns: repeat(2,1fr); }
+  .grid3     { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .bento { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+  .hero        { min-height: 75vh; }
+  .heroLabel::before { display: none; }
+
+  .bento {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
   .bentoWide { grid-column: span 1; }
-  .grid3 { grid-template-columns: 1fr; }
-  .testimonial { flex-direction: column; text-align: center; }
-  .testimonialAvatar { width: 120px; height: 120px; }
-  .testimonialText { font-size: var(--text-h2); }
+
+  .grid3     { grid-template-columns: 1fr; }
+
+  .sectionRow { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+  .testimonial {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--sp-md);
+    gap: var(--sp-md);
+  }
+  .testimonialAvatar { width: 100px; height: 100px; }
+  .testimonialText   { font-size: var(--text-h2); }
+  .stars             { justify-content: center; }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .heroCta { flex-direction: column; }
+  .heroCta > * { width: 100%; }
 }

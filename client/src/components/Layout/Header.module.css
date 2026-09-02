@@ -4,7 +4,7 @@
   left: var(--sidebar-w);
   right: 0;
   height: var(--header-h);
-  background: rgba(248, 245, 240, 0.92);   /* Marfil semitransparente */
+  background: rgba(248,245,240,0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-header);
@@ -14,8 +14,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--sp-page-x);
+  /* Safe area notch */
+  padding-left: max(var(--sp-page-x), env(safe-area-inset-left));
+  padding-right: max(var(--sp-page-x), env(safe-area-inset-right));
 }
 
+/* ── Desktop nav ── */
 .nav {
   display: flex;
   align-items: center;
@@ -24,24 +28,20 @@
 
 .navLink {
   font-size: var(--text-label);
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--clr-on-surface-variant);
   transition: color var(--t-fast);
   padding-bottom: 3px;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
-.navLink:hover {
-  color: var(--clr-primary);
-}
+.navLink:hover    { color: var(--clr-primary); }
+.navLink.active   { color: var(--clr-primary); border-bottom-color: var(--clr-gold); }
 
-.navLink.active {
-  color: var(--clr-primary);
-  border-bottom-color: var(--clr-gold);   /* línea dorada bajo el activo */
-}
-
+/* ── Acciones ── */
 .actions {
   display: flex;
   align-items: center;
@@ -57,6 +57,7 @@
   justify-content: center;
   color: var(--clr-on-surface-variant);
   transition: background var(--t-fast), color var(--t-fast);
+  flex-shrink: 0;
 }
 
 .iconBtn:hover {
@@ -69,21 +70,15 @@
   height: 40px;
   border-radius: var(--r-full);
   overflow: hidden;
-  border: 2px solid var(--clr-gold);   /* borde dorado */
+  border: 2px solid var(--clr-gold);
   cursor: pointer;
   flex-shrink: 0;
   transition: box-shadow var(--t-fast);
 }
 
-.avatar:hover {
-  box-shadow: var(--shadow-gold);
-}
+.avatar:hover { box-shadow: var(--shadow-gold); }
 
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
 
 .avatarPlaceholder {
   width: 100%;
@@ -97,18 +92,46 @@
   font-size: var(--text-label);
 }
 
+/* ── Hamburger — oculto en desktop ── */
 .menuBtn {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--r-md);
   align-items: center;
   justify-content: center;
-  color: var(--clr-on-surface-variant);
+  color: var(--clr-on-surface);
+  transition: background var(--t-fast);
+  flex-shrink: 0;
 }
 
+.menuBtn:hover { background: var(--clr-surface-high); }
+
+/* ── Mobile logo (visible solo en móvil) ── */
+.mobileBrand {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  color: var(--clr-primary);
+  font-weight: 400;
+}
+
+.mobileBrandIcon {
+  color: var(--clr-gold);
+  font-size: 1.5rem !important;
+}
+
+/* ── Breakpoints ── */
 @media (max-width: 1024px) {
-  .header { left: 0; }
-  .menuBtn { display: flex; }
-  .nav { display: none; }
+  .header   { left: 0; }
+  .menuBtn  { display: flex; }
+  .nav      { display: none; }
+  .mobileBrand { display: flex; }
+}
+
+@media (max-width: 480px) {
+  /* Oculta búsqueda y notifs en pantallas muy pequeñas para no saturar */
+  .searchBtn, .notifBtn { display: none; }
 }

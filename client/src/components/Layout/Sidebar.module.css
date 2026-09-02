@@ -4,37 +4,72 @@
   top: 0;
   height: 100vh;
   width: var(--sidebar-w);
-  background: var(--clr-inverse-surface);   /* Gris carbón oscuro */
+  background: var(--clr-inverse-surface);
   box-shadow: var(--shadow-sidebar);
   display: flex;
   flex-direction: column;
   padding: var(--sp-lg) 0;
   z-index: 50;
   transition: transform var(--t-base);
+  /* Fuerza GPU layer para animación suave */
+  will-change: transform;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
+/* ── Cabecera con logo ── */
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 var(--sp-page-x) var(--sp-md);
-  border-bottom: 1px solid rgba(201,166,107,0.25);  /* dorado suave */
+  padding: 0 var(--sp-md) var(--sp-md);
+  border-bottom: 1px solid rgba(201,166,107,0.25);
   margin-bottom: var(--sp-md);
+  /* Deja espacio para el botón close en móvil */
+  padding-right: 52px;
+  position: relative;
 }
 
 .brandIcon {
   font-size: 1.75rem !important;
   color: var(--clr-gold);
+  flex-shrink: 0;
 }
 
 .brandName {
   font-family: var(--font-serif);
   font-size: var(--text-h2);
-  color: var(--clr-inverse-on-surface);   /* Marfil */
+  color: var(--clr-inverse-on-surface);
   font-weight: 400;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
+/* Botón cerrar — solo visible en móvil */
+.closeBtn {
+  display: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-full);
+  align-items: center;
+  justify-content: center;
+  color: rgba(248,245,240,0.55);
+  background: rgba(255,255,255,0.08);
+  transition: background var(--t-fast), color var(--t-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--clr-inverse-on-surface);
+}
+
+/* ── Navegación ── */
 .nav {
   flex: 1;
   display: flex;
@@ -44,16 +79,19 @@
 }
 
 .navLink {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 13px 16px;
   border-radius: var(--r-md);
-  color: rgba(248,245,240,0.60);   /* Marfil semitransparente */
+  color: rgba(248,245,240,0.55);
   font-size: var(--text-label);
   font-weight: 600;
   letter-spacing: 0.03em;
   transition: background var(--t-fast), color var(--t-fast);
+  /* Tap target cómodo */
+  min-height: 48px;
 }
 
 .navLink:hover {
@@ -62,13 +100,12 @@
 }
 
 .navLink.active {
-  background: rgba(123,44,47,0.85);    /* Burdeos */
+  background: rgba(123,44,47,0.85);
   color: #ffffff;
   font-weight: 700;
   box-shadow: 0 2px 12px rgba(123,44,47,0.40);
 }
 
-/* Línea izquierda dorada en ítem activo */
 .navLink.active::before {
   content: '';
   position: absolute;
@@ -81,29 +118,45 @@
   border-radius: 0 var(--r-full) var(--r-full) 0;
 }
 
-.navLink {
-  position: relative;
-}
-
 .navLink .icon {
   font-size: 1.25rem !important;
+  flex-shrink: 0;
 }
 
+/* ── Pie ── */
 .footer {
-  padding: var(--sp-md) var(--sp-page-x) 0;
+  padding: var(--sp-md) var(--sp-md) 0;
   border-top: 1px solid rgba(201,166,107,0.20);
 }
 
 .version {
   font-size: var(--text-caption);
-  color: rgba(248,245,240,0.35);
+  color: rgba(248,245,240,0.30);
 }
 
+/* ── Mobile ── */
 @media (max-width: 1024px) {
   .sidebar {
     transform: translateX(-100%);
+    /* Ancho mayor en móvil para mejor legibilidad */
+    width: min(var(--sidebar-w), 85vw);
+    /* Safe area en notch */
+    padding-top: max(var(--sp-lg), env(safe-area-inset-top));
+    padding-bottom: env(safe-area-inset-bottom);
   }
+
   .sidebar.open {
     transform: translateX(0);
+  }
+
+  .closeBtn {
+    display: flex;
+  }
+
+  /* Tap targets más grandes en touch */
+  .navLink {
+    padding: 16px 18px;
+    font-size: var(--text-body);
+    min-height: 52px;
   }
 }

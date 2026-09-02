@@ -4,22 +4,22 @@
    ============================================================ */
 :root {
   /* ── Colores principales ── */
-  --clr-primary:              #7b2c2f;   /* Burdeos — acciones, CTA, activos */
+  --clr-primary:              #7b2c2f;
   --clr-on-primary:           #ffffff;
-  --clr-primary-hover:        #621f22;   /* Burdeos oscuro hover */
-  --clr-primary-light:        #f0d9da;   /* Burdeos muy suave — fondos de badge */
+  --clr-primary-hover:        #621f22;
+  --clr-primary-light:        #f0d9da;
   --clr-on-primary-container: #4a1215;
 
-  --clr-gold:                 #c9a66b;   /* Dorado — detalles premium, iconos, separadores */
-  --clr-gold-light:           #f0e4cc;   /* Dorado muy suave — fondos de chip */
-  --clr-gold-dark:            #a07e45;   /* Dorado oscuro hover */
+  --clr-gold:                 #c9a66b;
+  --clr-gold-light:           #f0e4cc;
+  --clr-gold-dark:            #a07e45;
 
-  --clr-secondary:            #5a4a3a;   /* Marrón cálido — complementario */
+  --clr-secondary:            #5a4a3a;
   --clr-on-secondary:         #ffffff;
   --clr-secondary-container:  #e8ddd3;
   --clr-on-secondary-container:#3b2e22;
 
-  --clr-tertiary:             #4a6355;   /* Verde oliva — etiquetas, éxito */
+  --clr-tertiary:             #4a6355;
   --clr-on-tertiary:          #ffffff;
   --clr-tertiary-container:   #c8ddd3;
 
@@ -27,36 +27,36 @@
   --clr-error-container:      #ffdad6;
 
   /* ── Superficies ── */
-  --clr-bg:                   #f8f5f0;   /* Marfil — fondo base */
-  --clr-surface:              #ffffff;   /* Blanco puro — tarjetas */
-  --clr-surface-low:          #f4f0e8;   /* Marfil suave — fondos secundarios */
-  --clr-surface-container:    #ede8df;   /* Marfil medio — contenedores */
-  --clr-surface-high:         #e5dfd4;   /* Marfil oscuro — hover, divisores */
-  --clr-surface-highest:      #ddd6c8;   /* Marfil más oscuro */
+  --clr-bg:                   #f8f5f0;
+  --clr-surface:              #ffffff;
+  --clr-surface-low:          #f4f0e8;
+  --clr-surface-container:    #ede8df;
+  --clr-surface-high:         #e5dfd4;
+  --clr-surface-highest:      #ddd6c8;
   --clr-surface-dim:          #d4ccc0;
 
   /* ── Texto ── */
-  --clr-on-surface:           #2e2e2e;   /* Gris carbón — texto principal */
-  --clr-on-surface-variant:   #6b6156;   /* Gris cálido — texto secundario */
-  --clr-outline:              #9e9287;   /* Bordes medios */
-  --clr-outline-variant:      #d4ccc0;   /* Bordes suaves */
+  --clr-on-surface:           #2e2e2e;
+  --clr-on-surface-variant:   #6b6156;
+  --clr-outline:              #9e9287;
+  --clr-outline-variant:      #d4ccc0;
 
   /* ── Inverse ── */
-  --clr-inverse-surface:      #2e2e2e;   /* Gris carbón */
+  --clr-inverse-surface:      #2e2e2e;
   --clr-inverse-on-surface:   #f8f5f0;
   --clr-inverse-primary:      #f0d9da;
 
-  /* ── Tipografía ── */
+  /* ── Tipografía fluida ── */
   --font-serif:   'Libre Caslon Text', Georgia, serif;
   --font-sans:    'Work Sans', system-ui, sans-serif;
 
-  --text-display:   clamp(2.25rem, 5vw, 3rem);
-  --text-h1:        2rem;
-  --text-h2:        1.5rem;
-  --text-body-lg:   1.125rem;
-  --text-body:      1rem;
-  --text-label:     0.875rem;
-  --text-caption:   0.75rem;
+  --text-display:  clamp(1.875rem, 5vw, 3rem);    /* 30px → 48px */
+  --text-h1:       clamp(1.5rem,   3.5vw, 2rem);   /* 24px → 32px */
+  --text-h2:       clamp(1.25rem,  2.5vw, 1.5rem); /* 20px → 24px */
+  --text-body-lg:  clamp(1rem,     1.5vw, 1.125rem);
+  --text-body:     1rem;
+  --text-label:    0.875rem;
+  --text-caption:  0.75rem;
 
   /* ── Espaciado ── */
   --sp-xs:      8px;
@@ -74,13 +74,13 @@
   --r-xl:   24px;
   --r-full: 9999px;
 
-  /* ── Sombras cálidas ── */
-  --shadow-sm:     0 2px 8px  rgba(46, 46, 46, 0.06);
-  --shadow-md:     0 4px 20px rgba(46, 46, 46, 0.09);
-  --shadow-lg:     0 8px 32px rgba(46, 46, 46, 0.14);
-  --shadow-gold:   0 4px 16px rgba(201, 166, 107, 0.25);
-  --shadow-header: 0 1px 8px  rgba(46, 46, 46, 0.06);
-  --shadow-sidebar:4px 0 20px rgba(46, 46, 46, 0.05);
+  /* ── Sombras ── */
+  --shadow-sm:     0 2px 8px  rgba(46,46,46,0.06);
+  --shadow-md:     0 4px 20px rgba(46,46,46,0.09);
+  --shadow-lg:     0 8px 32px rgba(46,46,46,0.14);
+  --shadow-gold:   0 4px 16px rgba(201,166,107,0.25);
+  --shadow-header: 0 1px 8px  rgba(46,46,46,0.06);
+  --shadow-sidebar:4px 0 20px rgba(46,46,46,0.05);
 
   /* ── Layout ── */
   --sidebar-w: 272px;
@@ -90,4 +90,15 @@
   --t-fast: 150ms ease;
   --t-base: 220ms ease;
   --t-slow: 400ms ease;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 768px) {
+  :root {
+    --sp-page-x: 16px;
+    --sp-lg:     36px;
+    --sp-md:     20px;
+    --sp-gutter: 16px;
+    --header-h:  64px;
+  }
 }
