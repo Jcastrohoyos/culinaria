@@ -45,7 +45,7 @@ export default function Footer() {
       <div className="container">
         <div className={styles.divider} />
         <p className={styles.copy}>
-          © 2024 Culinaria. Escuela de cocina en Bogotá. Todos los derechos reservados.
+          © {new Date().getFullYear()} Culinaria. Escuela de cocina en Bogotá. Todos los derechos reservados.
         </p>
       </div>
     </footer>

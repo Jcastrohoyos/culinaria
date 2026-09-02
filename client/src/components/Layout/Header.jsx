@@ -9,7 +9,7 @@ const TOP_NAV = [
   { to: '/comunidad',  label: 'Comunidad' },
 ]
 
-export default function Header({ onMenuToggle }) {
+export default function Header({ onMenuToggle, sidebarOpen }) {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
 
@@ -20,7 +20,7 @@ export default function Header({ onMenuToggle }) {
         className={styles.menuBtn}
         onClick={onMenuToggle}
         aria-label="Abrir menú"
-        aria-expanded="false"
+        aria-expanded={sidebarOpen}
       >
         <span className="material-symbols-outlined">menu</span>
       </button>
@@ -59,14 +59,14 @@ export default function Header({ onMenuToggle }) {
         </button>
 
         {user ? (
-          <div className={styles.avatar} onClick={() => navigate('/progreso')}>
+          <button className={styles.avatar} onClick={() => navigate('/progreso')} aria-label="Ir a mi perfil">
             {user.avatar
               ? <img src={user.avatar} alt={user.name} />
               : <div className={styles.avatarPlaceholder}>
                   {user.name?.charAt(0).toUpperCase()}
                 </div>
             }
-          </div>
+          </button>
         ) : (
           <NavLink to="/auth/login" className={styles.navLink}>
             Ingresar

@@ -146,3 +146,7 @@
   gap: 8px;
   color: var(--clr-primary-hover);
 }
+
+.badgeStar { font-size: 12px; font-variation-settings: 'FILL' 1; }
+.metaIcon { font-size: 16px; }
+.ctaArrow { font-size: 16px; }

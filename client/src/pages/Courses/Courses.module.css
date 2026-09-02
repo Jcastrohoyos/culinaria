@@ -148,7 +148,7 @@
 
   .chip {
     padding: 8px 12px;
-    font-size: 0.7rem;
+    font-size: var(--text-caption);
     letter-spacing: 0.02em;
     flex-shrink: 0;
   }

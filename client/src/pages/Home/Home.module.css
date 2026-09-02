@@ -330,6 +330,11 @@
 
 .testimonialRole { font-size: var(--text-caption); color: rgba(248,245,240,0.50); }
 
+.sectionBgInner { padding: var(--sp-lg) var(--sp-page-x); }
+.sectionTitleNoMargin { margin-bottom: 0; }
+.viewAllIcon { font-size: 1rem; }
+.starIcon { font-variation-settings: 'FILL' 1; font-size: 20px; }
+
 /* ══ Responsive ══════════════════════════════════ */
 
 /* Tablet */

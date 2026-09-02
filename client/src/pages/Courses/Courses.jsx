@@ -55,6 +55,7 @@ export default function Courses() {
               type="text"
               className={styles.searchInput}
               placeholder="Buscar cursos…"
+              aria-label="Buscar cursos"
               value={search}
               onChange={e => setSearch(e.target.value)}
             />

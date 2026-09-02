@@ -49,7 +49,7 @@ export default function Sidebar({ open, onClose }) {
       </nav>
 
       <div className={styles.footer}>
-        <p className={styles.version}>© 2024 Culinaria · Bogotá</p>
+        <p className={styles.version}>© {new Date().getFullYear()} Culinaria · Bogotá</p>
       </div>
     </aside>
   )

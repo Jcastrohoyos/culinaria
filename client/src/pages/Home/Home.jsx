@@ -143,15 +143,15 @@ export default function Home() {
 
       {/* ── Featured Courses ── */}
       <section className={`${styles.sectionBg} revealSection`}>
-        <div className="container" style={{ padding: 'var(--sp-lg) var(--sp-page-x)' }}>
+        <div className={`container ${styles.sectionBgInner}`}>
           <div className={styles.sectionRow}>
             <div>
               <span className={styles.sectionLabel}>Aprende Haciendo</span>
-              <h2 className={styles.sectionTitle} style={{ marginBottom: 0 }}>Cursos Destacados</h2>
+              <h2 className={`${styles.sectionTitle} ${styles.sectionTitleNoMargin}`}>Cursos Destacados</h2>
             </div>
             <Link to="/cursos" className={styles.viewAll}>
               Ver todos
-              <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
+              <span className={`material-symbols-outlined ${styles.viewAllIcon}`}>arrow_forward</span>
             </Link>
           </div>
 
@@ -182,8 +182,7 @@ export default function Home() {
             <div className={styles.testimonialBody}>
               <div className={styles.stars}>
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined"
-                    style={{ fontVariationSettings: "'FILL' 1", fontSize: '20px' }}>star</span>
+                  <span key={i} className={`material-symbols-outlined ${styles.starIcon}`}>star</span>
                 ))}
               </div>
               <p className={styles.testimonialText}>

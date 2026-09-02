@@ -95,6 +95,10 @@
 
 .card:hover .title { color: var(--clr-primary); }
 
+.favIcon { font-size: 18px; }
+.favIconActive { font-variation-settings: 'FILL' 1; }
+.favIconInactive { font-variation-settings: 'FILL' 0; }
+
 .desc {
   font-size: var(--text-body);
   color: var(--clr-on-surface-variant);

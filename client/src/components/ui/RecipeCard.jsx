@@ -25,8 +25,7 @@ export default function RecipeCard({ recipe, onToggleFavorite }) {
       {user && (
         <button className={styles.favBtn} onClick={handleFav} aria-label="Favorito">
           <span
-            className="material-symbols-outlined"
-            style={{ fontVariationSettings: isFav ? "'FILL' 1" : "'FILL' 0", fontSize: '18px' }}
+            className={`material-symbols-outlined ${styles.favIcon} ${isFav ? styles.favIconActive : styles.favIconInactive}`}
           >
             favorite
           </span>

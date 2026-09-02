@@ -25,7 +25,7 @@ export default function CourseCard({ course }) {
           <span className={`${styles.badge} ${styles.badgeLevel}`}>{level}</span>
           {rating && (
             <span className={`${styles.badge} ${styles.badgeRating}`}>
-              <span className="material-symbols-outlined" style={{ fontSize: '12px', fontVariationSettings: "'FILL' 1" }}>star</span>
+              <span className={`material-symbols-outlined ${styles.badgeStar}`}>star</span>
               {rating}
             </span>
           )}
@@ -39,12 +39,12 @@ export default function CourseCard({ course }) {
 
         <div className={styles.meta}>
           <span className={styles.duration}>
-            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>schedule</span>
+            <span className={`material-symbols-outlined ${styles.metaIcon}`}>schedule</span>
             {durationWeeks} semanas
           </span>
           <span className={styles.cta}>
             Ver Curso
-            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
+            <span className={`material-symbols-outlined ${styles.ctaArrow}`}>arrow_forward</span>
           </span>
         </div>
       </div>

@@ -132,6 +132,11 @@
 
 .checkbox:checked { background: var(--clr-primary); border-color: var(--clr-primary); }
 
+.checkbox:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
 .checkbox:checked::after {
   content: '';
   position: absolute;

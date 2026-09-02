@@ -35,7 +35,7 @@ export default function Layout() {
       />
 
       <div className={styles.main}>
-        <Header onMenuToggle={() => setSidebarOpen(prev => !prev)} />
+        <Header onMenuToggle={() => setSidebarOpen(prev => !prev)} sidebarOpen={sidebarOpen} />
         <main className={styles.content}>
           <Outlet />
         </main>
